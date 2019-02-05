@@ -51,7 +51,7 @@ public class quizschedule extends HttpServlet
    // Data files
    // location maps to /webapps/offutt/WEB-INF/data/ from a terminal window.
    // These names show up in all servlets
-   private static final String dataLocation    = "/var/www/CS/webapps/offutt/WEB-INF/data/";
+   private static final String dataLocation    = "/data/";
    static private final String separator = ",";
    private static final String courseBase   = "course";
    private static final String quizzesBase = "quiz-orig";
@@ -84,10 +84,12 @@ protected void doGet (HttpServletRequest request, HttpServletResponse response)
    servletUtils.printHeader (out);
 
    // Whoami? (Used in form)
-   thisServlet = (request.getRequestURL()).toString();
+   //thristov -- commented this servlet
+   /*thisServlet = (request.getRequestURL()).toString();
    // CS server has a flaw--requires https & 8443, but puts http & 8080 on the requestURL
    thisServlet = thisServlet.replace("http", "https");
    thisServlet = thisServlet.replace("8080", "8443");
+   */
 
    // CourseID must be a parameter (also in course XML file, but we need to know which course XML file ...)
    courseID = request.getParameter("courseID");
