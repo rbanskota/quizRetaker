@@ -1,10 +1,10 @@
 # Initial target servlet front end
 quizschedule : quizschedule.class
 quizschedule.class : quizschedule.java servletUtils.class retakesReader.class retakeBean.class retakes.class quizReader.class quizzes.class quizBean.class apptsReader.class apptBean.class courseReader.class courseBean.class
-	cd ..; javac quizretakes/quizschedule.java ; cd quizretakes
+	cd ..; javac -cp .:quizretakes/javax.servlet-api-3.0.1 quizretakes/quizschedule.java ; cd quizretakes
 
 servletUtils.class : servletUtils.java
-	cd ..; javac quizretakes/servletUtils.java ; cd quizretakes
+	cd ..; javac -cp .:quizretakes/javax.servlet-api-3.0.1 quizretakes/servletUtils.java ; cd quizretakes
 
 quizReader.class : quizReader.java quizzes.class quizBean.java
 	cd ..; javac quizretakes/quizReader.java ; cd quizretakes
